@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: flask-docker-api
+    env: docker
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: FLASK_ENV
+        value: production
