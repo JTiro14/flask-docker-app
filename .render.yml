@@ -1,0 +1,17 @@
+# .render.yaml
+services:
+  - type: web
+    name: flask-docker-app
+    runtime: docker
+    env: docker
+    plan: free
+    dockerContext: .
+    dockerfile: Dockerfile
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: DB_URI
+        value: postgresql://user:pass@host:port/db  # Update with your DB details
+      - key: FLASK_KEY
+        generateValue: true
+    healthCheckPath: /health
