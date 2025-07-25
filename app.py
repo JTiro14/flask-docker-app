@@ -11,11 +11,10 @@ from routes.auth import auth_bp
 app = Flask(__name__)
 
 load_dotenv(find_dotenv())
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///flask-api-db.db")
 db.init_app(app)
 migrate = Migrate(app, db)
 app.config['JWT_SECRET_KEY'] = os.environ.get("FLASK_KEY")
-SQLALCHEMY_TRACK_MODIFICATIONS = False
 jwt = JWTManager(app)
 
 app.register_blueprint(user_bp)
