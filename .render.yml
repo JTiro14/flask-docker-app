@@ -11,7 +11,7 @@ services:
       - key: FLASK_ENV
         value: production
       - key: DB_URI
-        value: postgresql://user:pass@host:port/db  # Update with your DB details
+        value: postgresql://flask_docker_db_vhiz_user:dJTNmJQiZLIsXt1EMmah5B9u3XUfN22f@dpg-d21hke2dbo4c73e67740-a.singapore-postgres.render.com/flask_docker_db_vhiz
       - key: FLASK_KEY
         generateValue: true
     healthCheckPath: /health
